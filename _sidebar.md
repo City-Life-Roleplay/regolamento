@@ -1,12 +1,6 @@
-* [🏠 Home](README.md)
-* [📜 Regolamento Generale](README.md#📌-1-fondamenti-e-filosofia)
-* [👤 Il Personaggio](README.md#👤-2-il-personaggio-background-e-identità)
-* [🚫 Regole Base e Divieti](README.md#🚫-3-definizioni-e-regole-base)
-* [🚑 EMS e Salute](README.md#🚑-4-regolamento-ems-e-salute)
-* [💀 Permadeath](README.md#💀-5-permadeath-morte-definitiva)
-* [🔫 Criminalità e Gang](README.md#🔫-6-regolamento-gang-e-criminalità)
-* [💰 Rapine e Loot](README.md#💰-7-rapine-heist-e-loot)
-* [🛠️ Assistenza e Ticket](README.md#🛠️-8-assistenza-e-ticket)
-
----
-* [🌐 Unisciti al Discord](https://discord.gg/WE7gfarTjk)
+* [🏠 Home](regolamento.md)
+* [📜 Regolamento Generale](regolamento.md#1-filosofia-e-regole-generali)
+* [🚑 EMS e Salute](regolamento.md#2-regolamento-ems-e-gestione-ferite)
+* [💀 Permadeath](regolamento.md#4-regolamento-permadeath)
+* [⛓️ Gang e Criminalità](regolamento.md#1-le-gang-south-side)
+* [💰 Rapine](regolamento.md#regolamento-rapine-ed-heist)
