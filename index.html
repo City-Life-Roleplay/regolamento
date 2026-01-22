@@ -11,7 +11,7 @@
       --theme-color: #8c469f;
     }
 
-    /* Protezione Selezione Testo e Miglioramento Font */
+    /* Protezione e Stile Testo Alta Visibilità */
     body {
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -19,13 +19,14 @@
       user-select: none;
       background-color: #fff;
       margin: 0;
-      /* Colore testo nero pieno e font più leggibile */
+      /* Scrittura più grande e marcata */
       color: #000 !important;
-      font-weight: 450; 
-      font-size: 16px;
+      font-weight: 600; /* Testo molto più marcato */
+      font-size: 17px;
+      line-height: 1.7;
     }
 
-    /* SFONDO FISSO (WATERMARK) */
+    /* SFONDO FISSO (WATERMARK) - Visibilità originale ripristinata */
     body::before {
       content: "";
       position: fixed;
@@ -37,44 +38,47 @@
       background-image: url('logo.png');
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 50%;
-      opacity: 0.12; /* Leggermente abbassata per dare priorità alla lettura */
+      background-size: 55%;
+      opacity: 0.25; /* Ripristinata visibilità logo */
       pointer-events: none;
     }
 
-    /* Area Testo più leggibile */
+    /* Area Testo senza sfondo coprente */
     .markdown-section {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 40px;
-      /* Sfondo bianco leggero per separare bene il testo dal logo di sfondo */
-      background: rgba(255, 255, 255, 0.7);
-      border-radius: 10px;
+      background: transparent !important; /* Rimosso il velo bianco */
     }
 
-    /* Rende le scritte nere e sature */
+    /* Miglioramento visibilità scritte nere */
     .markdown-section p, .markdown-section li, .markdown-section table {
       color: #000 !important;
-      line-height: 1.6;
+      /* Leggera ombra bianca per staccare il testo dallo sfondo senza coprirlo */
+      text-shadow: 0px 0px 1px #fff, 0px 0px 1px #fff;
     }
 
-    /* Titoli Viola Saturi */
+    /* Titoli Viola Molto Evidenti */
     .markdown-section h1, .markdown-section h2, .markdown-section h3 {
       color: var(--theme-color) !important;
-      font-weight: 700;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     /* Adattamento per Smartphone */
     @media screen and (max-width: 768px) {
+      body {
+        font-size: 15px;
+      }
       body::before {
-        background-size: 80%;
+        background-size: 85%;
       }
       .logo-container img {
-        width: 120px !important;
+        width: 130px !important;
       }
       .markdown-section {
         padding: 20px 15px !important;
-        background: rgba(255, 255, 255, 0.8); /* Più coprente su mobile */
       }
     }
 
@@ -84,19 +88,19 @@
       margin-bottom: 20px;
     }
     .logo-container img {
-      width: 180px;
+      width: 200px;
       height: auto;
     }
 
     hr {
       border: 0;
-      border-top: 2px solid var(--theme-color) !important;
-      margin: 2em 0;
+      border-top: 3px solid var(--theme-color) !important;
+      margin: 2.5em 0;
       opacity: 1;
     }
 
     .sidebar-nav li.active > a {
-      border-right: 2px solid var(--theme-color) !important;
+      border-right: 3px solid var(--theme-color) !important;
       color: var(--theme-color) !important;
       font-weight: bold;
     }
@@ -122,7 +126,6 @@
       mergeNavbar: true,
     }
 
-    /* Blocca Copia e Ispeziona */
     document.addEventListener('keydown', function(e) {
       if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'u' || e.key === 's' || (e.shiftKey && e.key === 'I'))) {
         e.preventDefault();
