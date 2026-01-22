@@ -3,31 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <title>City Life RP - Regolamento</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
     :root {
-      /* Colore Viola estratto dal logo */
       --theme-color: #8c469f;
     }
 
-    /* Sfondo con Logo Grande in Trasparenza */
+    /* Sfondo Responsive */
     body {
-      background-image: url('logo.png');
+      background: 
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+        url('logo.png');
       background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
-      background-size: 55%; /* Regola la grandezza del logo sullo sfondo */
-      background-color: rgba(255, 255, 255, 0.324); /* Schiarisce lo sfondo per leggibilità */
-      background-blend-mode: overlay;
-      
-      /* Protezione CSS: Impedisce la selezione del testo */
+      background-size: 50%; /* Default per PC */
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
     }
 
-    /* Logo in alto al centro */
+    /* Adattamento per Smartphone */
+    @media screen and (max-width: 768px) {
+      body {
+        background-size: 80%; /* Logo più grande su mobile per visibilità */
+        background-attachment: scroll; /* Evita distorsioni su alcuni browser mobile */
+      }
+      .logo-container img {
+        width: 120px !important; /* Logo testata più piccolo su mobile */
+      }
+      .markdown-section {
+        padding: 20px !important; /* Più spazio ai bordi su mobile */
+      }
+    }
+
     .logo-container {
       text-align: center;
       margin-top: 30px;
@@ -36,17 +48,16 @@
     .logo-container img {
       width: 180px;
       height: auto;
+      transition: width 0.3s ease;
     }
 
-    /* Linee divisorie (HR) color viola */
     hr {
       border: 0;
       border-top: 2px solid var(--theme-color) !important;
       margin: 2em 0;
-      opacity: 0.8;
+      opacity: 1;
     }
 
-    /* Personalizzazione colori Docsify */
     .sidebar-nav li.active > a {
       border-right: 2px solid var(--theme-color) !important;
       color: var(--theme-color) !important;
@@ -56,7 +67,6 @@
       color: var(--theme-color);
     }
 
-    /* Nasconde scrollbar durante il caricamento */
     #app {
       position: relative;
       z-index: 1;
@@ -79,13 +89,14 @@
       homepage: 'regolamento.md',
       themeColor: '#8c469f',
       logo: 'logo.png',
-      auto2top: true
+      auto2top: true,
+      // Configurazione mobile
+      mergeNavbar: true,
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
     }
 
-    /* Protezione Avanzata JavaScript */
     document.addEventListener('keydown', function(e) {
-      // Blocca Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+Shift+I (Ispeziona)
-      if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'u' || e.key === 's' || e.shiftKey && e.key === 'I')) {
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'u' || e.key === 's' || (e.shiftKey && e.key === 'I'))) {
         e.preventDefault();
         return false;
       }
