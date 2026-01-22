@@ -3,20 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>City Life RP - Regolamento</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <style>
+    /* Codice per centrare il logo in alto */
+    .logo-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .logo-container img {
+      width: 150px; /* Regola la grandezza qui */
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-  <div id="app">Caricamento regolamento...</div>
+  <div id="app">
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo City Life">
+    </div>
+    Caricamento...
+  </div>
   <script>
     window.$docsify = {
       name: 'City Life RP',
       loadSidebar: true,
-      subMaxLevel: 2,
-      // Qui abbiamo impostato il nuovo nome file
-      homepage: 'regolamento.md', 
-      auto2top: true
+      homepage: 'regolamento.md',
+      // Inseriamo il logo anche nella sidebar per completezza
+      logo: 'logo.png' 
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
