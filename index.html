@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>City Life RP - Regolamento Ufficiale</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Regolamento Ufficiale del server King X / City Life RP">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/dark.css">
+  
+  <style>
+    :root {
+      /* Colore azzurro ripreso dal possibile stile City Life */
+      --theme-color: #3498db; 
+    }
+    
+    /* Stile per il logo nella sidebar */
+    .app-name-link img {
+      width: 150px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+
+    .sidebar {
+      background-color: #1c1c1c;
+    }
+
+    .markdown-section {
+      max-width: 950px;
+      padding-top: 40px;
+    }
+
+    /* Personalizzazione scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--theme-color);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Caricamento City Life RP...</div>
+  
+  <script>
+    window.$docsify = {
+      name: 'City Life RP',
+      // Inserimento del tuo Logo
+      logo: 'https://i.postimg.cc/Y2FSz553/logo2.png',
+      loadSidebar: true,
+      subMaxLevel: 3,
+      auto2top: true,
+      mergeNavbar: true,
+      
+      // Configurazione Ricerca Integrata
+      search: {
+        maxAge: 86400000,
+        paths: 'auto',
+        placeholder: '🔎 Cerca una regola...',
+        noData: '❌ Nessun risultato trovato!',
+        depth: 4
+      },
+
+      // Testo per il caricamento
+      el: '#app',
+    }
+  </script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+</body>
+</html>
