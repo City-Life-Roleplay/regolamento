@@ -11,7 +11,7 @@
       --theme-color: #8c469f;
     }
 
-    /* Protezione Selezione Testo */
+    /* Protezione Selezione Testo e Miglioramento Font */
     body {
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -19,9 +19,13 @@
       user-select: none;
       background-color: #fff;
       margin: 0;
+      /* Colore testo nero pieno e font più leggibile */
+      color: #000 !important;
+      font-weight: 450; 
+      font-size: 16px;
     }
 
-    /* SFONDO FISSO (WATERMARK) - Funziona su PC e Smartphone */
+    /* SFONDO FISSO (WATERMARK) */
     body::before {
       content: "";
       position: fixed;
@@ -29,29 +33,51 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1; /* Resta dietro a tutto */
+      z-index: -1;
       background-image: url('logo.png');
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 50%; /* Grandezza su PC */
-      opacity: 0.15; /* Regola qui la trasparenza (0.15 = 15%) */
-      pointer-events: none; /* Non interferisce con i click */
+      background-size: 50%;
+      opacity: 0.12; /* Leggermente abbassata per dare priorità alla lettura */
+      pointer-events: none;
     }
 
-    /* Adattamento Sfondo per Smartphone */
+    /* Area Testo più leggibile */
+    .markdown-section {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 40px;
+      /* Sfondo bianco leggero per separare bene il testo dal logo di sfondo */
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 10px;
+    }
+
+    /* Rende le scritte nere e sature */
+    .markdown-section p, .markdown-section li, .markdown-section table {
+      color: #000 !important;
+      line-height: 1.6;
+    }
+
+    /* Titoli Viola Saturi */
+    .markdown-section h1, .markdown-section h2, .markdown-section h3 {
+      color: var(--theme-color) !important;
+      font-weight: 700;
+    }
+
+    /* Adattamento per Smartphone */
     @media screen and (max-width: 768px) {
       body::before {
-        background-size: 85%; /* Logo più grande su mobile per coprire lo schermo */
+        background-size: 80%;
       }
       .logo-container img {
         width: 120px !important;
       }
       .markdown-section {
         padding: 20px 15px !important;
+        background: rgba(255, 255, 255, 0.8); /* Più coprente su mobile */
       }
     }
 
-    /* Logo testata centrato */
     .logo-container {
       text-align: center;
       margin-top: 30px;
@@ -62,7 +88,6 @@
       height: auto;
     }
 
-    /* Linee divisorie Viola */
     hr {
       border: 0;
       border-top: 2px solid var(--theme-color) !important;
@@ -70,17 +95,10 @@
       opacity: 1;
     }
 
-    /* Colori Titoli e Sidebar */
     .sidebar-nav li.active > a {
       border-right: 2px solid var(--theme-color) !important;
       color: var(--theme-color) !important;
-    }
-    .markdown-section h1, .markdown-section h2, .markdown-section h3 {
-      color: var(--theme-color);
-    }
-
-    #app {
-      background: transparent; /* Permette di vedere lo sfondo creato nel body::before */
+      font-weight: bold;
     }
   </style>
 </head>
@@ -89,7 +107,7 @@
     <div class="logo-container">
       <img src="logo.png" alt="Logo City Life">
     </div>
-    Caricamento protetto...
+    Caricamento...
   </div>
   
   <script>
