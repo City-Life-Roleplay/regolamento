@@ -4,42 +4,54 @@
   <meta charset="UTF-8">
   <title>City Life RP - Regolamento</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
     :root {
       --theme-color: #8c469f;
     }
 
-    /* Sfondo Responsive */
+    /* Protezione Selezione Testo */
     body {
-      background: 
-        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
-        url('logo.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-attachment: fixed;
-      background-size: 50%; /* Default per PC */
       -webkit-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+      background-color: #fff;
+      margin: 0;
     }
 
-    /* Adattamento per Smartphone */
+    /* SFONDO FISSO (WATERMARK) - Funziona su PC e Smartphone */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Resta dietro a tutto */
+      background-image: url('logo.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50%; /* Grandezza su PC */
+      opacity: 0.15; /* Regola qui la trasparenza (0.15 = 15%) */
+      pointer-events: none; /* Non interferisce con i click */
+    }
+
+    /* Adattamento Sfondo per Smartphone */
     @media screen and (max-width: 768px) {
-      body {
-        background-size: 80%; /* Logo più grande su mobile per visibilità */
-        background-attachment: scroll; /* Evita distorsioni su alcuni browser mobile */
+      body::before {
+        background-size: 85%; /* Logo più grande su mobile per coprire lo schermo */
       }
       .logo-container img {
-        width: 120px !important; /* Logo testata più piccolo su mobile */
+        width: 120px !important;
       }
       .markdown-section {
-        padding: 20px !important; /* Più spazio ai bordi su mobile */
+        padding: 20px 15px !important;
       }
     }
 
+    /* Logo testata centrato */
     .logo-container {
       text-align: center;
       margin-top: 30px;
@@ -48,9 +60,9 @@
     .logo-container img {
       width: 180px;
       height: auto;
-      transition: width 0.3s ease;
     }
 
+    /* Linee divisorie Viola */
     hr {
       border: 0;
       border-top: 2px solid var(--theme-color) !important;
@@ -58,18 +70,17 @@
       opacity: 1;
     }
 
+    /* Colori Titoli e Sidebar */
     .sidebar-nav li.active > a {
       border-right: 2px solid var(--theme-color) !important;
       color: var(--theme-color) !important;
     }
-    
     .markdown-section h1, .markdown-section h2, .markdown-section h3 {
       color: var(--theme-color);
     }
 
     #app {
-      position: relative;
-      z-index: 1;
+      background: transparent; /* Permette di vedere lo sfondo creato nel body::before */
     }
   </style>
 </head>
@@ -90,11 +101,10 @@
       themeColor: '#8c469f',
       logo: 'logo.png',
       auto2top: true,
-      // Configurazione mobile
       mergeNavbar: true,
-      formatUpdated: '{MM}/{DD} {HH}:{mm}',
     }
 
+    /* Blocca Copia e Ispeziona */
     document.addEventListener('keydown', function(e) {
       if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'u' || e.key === 's' || (e.shiftKey && e.key === 'I'))) {
         e.preventDefault();
