@@ -5,32 +5,91 @@
   <title>City Life RP - Regolamento</title>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <style>
-    /* Codice per centrare il logo in alto */
+    :root {
+      /* Colore Viola estratto dal logo */
+      --theme-color: #8c469f;
+    }
+
+    /* Sfondo con Logo Grande in Trasparenza */
+    body {
+      background-image: url('logo.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-size: 60%; /* Regola la grandezza del logo sullo sfondo */
+      background-color: rgba(255, 255, 255, 0.95); /* Schiarisce lo sfondo per leggibilità */
+      background-blend-mode: overlay;
+      
+      /* Protezione CSS: Impedisce la selezione del testo */
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Logo in alto al centro */
     .logo-container {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 30px;
+      margin-bottom: 20px;
     }
     .logo-container img {
-      width: 150px; /* Regola la grandezza qui */
+      width: 180px;
       height: auto;
+    }
+
+    /* Linee divisorie (HR) color viola */
+    hr {
+      border: 0;
+      border-top: 2px solid var(--theme-color) !important;
+      margin: 2em 0;
+      opacity: 0.8;
+    }
+
+    /* Personalizzazione colori Docsify */
+    .sidebar-nav li.active > a {
+      border-right: 2px solid var(--theme-color) !important;
+      color: var(--theme-color) !important;
+    }
+    
+    .markdown-section h1, .markdown-section h2, .markdown-section h3 {
+      color: var(--theme-color);
+    }
+
+    /* Nasconde scrollbar durante il caricamento */
+    #app {
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>
-<body>
+<body oncontextmenu="return false" onkeydown="return false">
   <div id="app">
     <div class="logo-container">
       <img src="logo.png" alt="Logo City Life">
     </div>
-    Caricamento...
+    Caricamento protetto...
   </div>
+  
   <script>
     window.$docsify = {
       name: 'City Life RP',
       loadSidebar: true,
+      subMaxLevel: 2,
       homepage: 'regolamento.md',
-      // Inseriamo il logo anche nella sidebar per completezza
-      logo: 'logo.png' 
+      themeColor: '#8c469f',
+      logo: 'logo.png',
+      auto2top: true
     }
+
+    /* Protezione Avanzata JavaScript */
+    document.addEventListener('keydown', function(e) {
+      // Blocca Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+Shift+I (Ispeziona)
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'v' || e.key === 'u' || e.key === 's' || e.shiftKey && e.key === 'I')) {
+        e.preventDefault();
+        return false;
+      }
+    });
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 </body>
