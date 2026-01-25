@@ -61,6 +61,7 @@ Durante un'azione è consentito lootare esclusivamente seguendo questi limiti:
 * **Flag & Dress Code:** Obbligatorio indossare bandana e colori della gang nel proprio ghetto.
 * **Impersonificazione:** Chi si spaccia per un membro di una gang rischia il Permadeath.
 * **Tetti:** Vietato sparare dai tetti tra gang; permesso solo il controllo visivo.
+* **ingaggio:** Nelle azioni (illegali e non) sarà  obbligatorio un ingaggio verbale sensato.
 
 ### Azioni Criminali
 * **Drive-By:** Un solo giro, mira al corpo, velocità inferiore a 40 km/h.
