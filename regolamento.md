@@ -14,7 +14,7 @@
 
 ---
 
-## 👤 2. Il Personaggio (Background e Identità)
+## 👤 2. Il Personaggio 
 * **No Supereroi:** Vietato interpretare celebrità o personaggi invincibili (es. Rambo).
 * **Nomi:** Devono essere seri e appropriati. Vietati nomi "meme".
 * **Prove Video:** Valide solo se ottenute tramite oggetti in-game (Bodycam, Go Pro, Telefono).
